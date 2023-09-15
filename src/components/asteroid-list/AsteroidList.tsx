@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Asteroid from '../asteroid-card/AsteroidCard';
 import styles from './AsteroidList.module.css';
-import Image from 'next/image';
 type Props = {
   asteroids: AsteroidOnClient[];
   loading: boolean;
@@ -21,12 +20,12 @@ export default function AsteroidList({ asteroids, loading, addToCart }: Props) {
             disabled={measure === 'luna'}>В лунных орбитах</button>
         </div>
       </div >
-      {loading && <Image className="spinner" src="/img/Spinner.png" alt="spinner" width={16} height={16} />}
+      {loading && <img className="spinner" src="/img/Spinner.png" alt="spinner" width={16} height={16} />}
       <ul className={styles.list}>
         {asteroids.map((item) => <Asteroid key={item.id} asteroid={item} loading={loading} addToCart={addToCart} measure={measure} />)}
       </ul>
       <br />
-      {loading && <Image className="spinner" src="/img/Spinner.png" alt="spinner" width={16} height={16} />}
+      {loading && <img className="spinner" src="/img/Spinner.png" alt="spinner" width={16} height={16} />}
     </div>
   );
 }

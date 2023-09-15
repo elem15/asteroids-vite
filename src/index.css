@@ -92,7 +92,7 @@ li {
 
 .list__title {
   color: var(--White-Base, #FFF);
-  font-family: Helvetica;
+  font-family: var(--font-helvetica);
   font-size: 28px;
   font-style: normal;
   font-weight: 600;

@@ -1,8 +1,7 @@
-import { declOfNum } from '@/app/utils/deklOfNum';
+import { declOfNum } from '../../utils/deklOfNum';
 import styles from './CartWidget.module.css';
-import Link from 'next/link';
-import { CART_PAGE_URL } from '@/app/assets/constants/urls';
-import Image from 'next/image';
+import { CART_PAGE_URL } from '../../assets/constants/urls';
+import { Link } from 'react-router-dom';
 
 type Props = {
   loading: boolean;
@@ -19,11 +18,11 @@ export default function CartWidget({ loading, cartCounter }: Props) {
       </div>
       {cartCounter === 0 ?
         <div className={styles.cart__content}>Миссии не заказаны</div>
-        : <Link href={CART_PAGE_URL}>
+        : <Link to={CART_PAGE_URL}>
           <button className={styles.cart__button} disabled={loading}>
             Отправить
             {loading && <div className={styles.cart__preloader}>
-              <Image className="spinner" src="/img/Spinner.png" alt="spinner" width={16} height={16} />
+              <img className="spinner" src="/img/Spinner.png" alt="spinner" width={16} height={16} />
             </div>}
           </button></Link>
       }

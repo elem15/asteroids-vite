@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import { useState } from 'react';
 import styles from './AsteroidCard.module.css';
-import Image from 'next/image';
+import { Link } from 'react-router-dom';
 
 type Props = {
   asteroid: AsteroidOnClient;
@@ -32,11 +31,11 @@ export default function Asteroid({ asteroid, loading, addToCart, measure }: Prop
           }
         </div>
         <div className={styles.asteroid__small}>{asteroid.size === 'small'
-          && <Image src='/img/asteroid-small.png' alt='asteroids' width='22' height='24' />}</div>
+          && <img src='/img/asteroid-small.png' alt='asteroids' width='22' height='24' />}</div>
         <div className={styles.asteroid__large}>{asteroid.size === 'large'
-          && <Image src='/img/asteroid-large.png' alt='asteroids' width='37' height='40' />}</div>
+          && <img src='/img/asteroid-large.png' alt='asteroids' width='37' height='40' />}</div>
         <div>
-          <h3 className={styles.list__item__title}><Link href={`/asteroid/${asteroid.id}`}>{asteroid.name}</Link></h3>
+          <h3 className={styles.list__item__title}><Link to={`/asteroid/${asteroid.id}`}>{asteroid.name}</Link></h3>
           <div className={styles.list__item__size}>
             Ø {Math.floor(asteroid.estimated_diameter_max)} м
           </div>
@@ -56,7 +55,7 @@ export default function Asteroid({ asteroid, loading, addToCart, measure }: Prop
         </>}
         {asteroid.isDanger
           && <div className={styles.list__item__danger}>
-            <Image src="/img/danger.png" alt="danger" width={15} height={15} /> Опасен</div>}
+            <img src="/img/danger.png" alt="danger" width={15} height={15} /> Опасен</div>}
       </div>
     </li>
   );
