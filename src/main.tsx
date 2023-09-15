@@ -5,9 +5,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import App from './App';
 import Root from './routes/root';
 import ErrorPage from './error-page';
+import Asteroids from './routes/asteroids/root';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "contacts/:contactId",
-        element: <div>Contacts</div>,
+        path: "asteroids",
+        element: <Asteroids />,
       },
     ],
   },
