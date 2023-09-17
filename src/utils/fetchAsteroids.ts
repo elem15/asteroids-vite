@@ -18,16 +18,12 @@ export default async function fetchAsteroids(startDate = '', endDate = '') {
   startDate = startDate ? startDate : currentDate;
   endDate = endDate ? endDate : tomorrow;
 
-  console.log(startDate, endDate);
-
   try {
     const res = await fetch(`${NASA_BASE_URL}/feed?start_date=${startDate}&end_date=${endDate}&api_key=DEMO_KEY`);
-
     const data: ResponseData = await res.json();
     if (!res.ok) {
       throw new Error(NASA_ERROR);
     }
-    console.log(data);
     const asteroids = [...data['near_earth_objects'][startDate], ...data['near_earth_objects'][endDate]];
 
     asteroidList = asteroids.map(convertAsteroids);

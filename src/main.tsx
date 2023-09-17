@@ -7,7 +7,9 @@ import {
 import "./index.css";
 import Root from './routes/root';
 import ErrorPage from './error-page';
-import Asteroids from './routes/asteroids/root';
+import Asteroids from './routes/asteroids/Asteroids';
+import Cart from './routes/cart/Cart';
+import Asteroid, { loader as asteroidLoader } from './routes/asteroid/Asteroid';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,15 @@ const router = createBrowserRouter([
       {
         path: "asteroids",
         element: <Asteroids />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
+      },
+      {
+        path: "asteroid/:id",
+        element: <Asteroid />,
+        loader: asteroidLoader
       },
     ],
   },
