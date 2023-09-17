@@ -105,11 +105,17 @@ li {
   -webkit-font-smoothing: antialiased;
   margin: 10px auto;
   text-align: center;
-  font-size: 48px;
+  font-size: 32px;
   z-index: 50;
   top: 40vh;
   width: 100%;
   position: fixed;
+}
+
+.error__home-link {
+  color: lightblue;
+  font-size: 24;
+  text-decoration: underline;
 }
 
 .spinner {

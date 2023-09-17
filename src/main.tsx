@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "asteroids",
+        path: "",
         element: <Asteroids />,
       },
       {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "asteroid/:id",
         element: <Asteroid />,
-        loader: asteroidLoader
+        loader: asteroidLoader,
       },
     ],
   },
