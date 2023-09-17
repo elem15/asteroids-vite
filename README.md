@@ -1,4 +1,7 @@
-# React + TypeScript + Vite
+### New version of original [Asteroids](https://github.com/elem15/asteroids-next) project on Next. 
+ Using Vite allows you to load data locally from api.nasa.gov - each user can send 50 queries per  day
+
+_________
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
