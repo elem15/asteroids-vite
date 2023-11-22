@@ -8,7 +8,7 @@ import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader({ params }: LoaderFunctionArgs<string>): Promise<AsteroidFull | null> {
   try {
-    const res = await fetch(`${NASA_BASE_URL}/neo/${params.id}?api_key=DEMO_KEY`);
+    const res = await fetch(`${NASA_BASE_URL}/neo/${params.id}?api_key=${import.meta.env.VITE_API_KEY}`);
     if (!res.ok) throw new Error(NASA_ERROR);
     return res.json();
   } catch (err) {

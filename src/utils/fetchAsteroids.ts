@@ -19,7 +19,7 @@ export default async function fetchAsteroids(startDate = '', endDate = '') {
   endDate = endDate ? endDate : tomorrow;
 
   try {
-    const res = await fetch(`${NASA_BASE_URL}/feed?start_date=${startDate}&end_date=${endDate}&api_key=DEMO_KEY`);
+    const res = await fetch(`${NASA_BASE_URL}/feed?start_date=${startDate}&end_date=${endDate}&api_key=${import.meta.env.VITE_API_KEY}`);
     const data: ResponseData = await res.json();
     if (!res.ok) {
       throw new Error(NASA_ERROR);
