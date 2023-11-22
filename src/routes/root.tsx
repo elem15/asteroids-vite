@@ -37,6 +37,15 @@ export default function RootLayout() {
       <img className={isEarthStatic ? "earth earth__up" : "earth"} src="/img/planeta_zemlia.jpg" alt="earth"
         width={400} height={620} />
       <Outlet />
+      <div className="copyright">
+        Website by <a href="https://github.com/elem15" target="_blank">
+          Mikhail Dvorkin<img
+            className="github"
+            src="/img/github.svg"
+            alt="elem15"
+            height="15"
+          /></a>
+      </div>
     </>
 
   );
